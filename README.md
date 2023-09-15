@@ -33,7 +33,7 @@ This module makes use of the ternary operation, which is a simple form of if-els
   or instance, in the azurerm_virtual_network resource in this module, we use a ternary operation in the `count` parameter:
 
 ```hcl
-count    = local.create_rg ? 1 : 0
+count    = var.create ? 1 : 0
 
 Here, var.create is the condition.
 If var.create is true, the count will be 1, meaning one virtual network will be created.
