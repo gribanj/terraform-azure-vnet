@@ -25,7 +25,7 @@ variable "address_space" {
 variable "dns_servers" {
   description = "List of IP addresses of DNS servers for the virtual network."
   type        = list(string)
-  default     = ["1.1.1.1", "8.8.8.8"]
+  default     = []
 }
 
 #============================================= LOGIC
@@ -36,19 +36,19 @@ variable "create" {
   default     = false
 }
 
-#============================================= TAGS
+# #============================================= TAGS
 
-variable "tags" {
-  type        = map(string)
-  description = "A map of tags to add to the resource"
-  default = {
-    "owner"     = "devops"
-    "terraform" = "true"
-    "env"       = "prod"
-  }
-  validation {
-    condition     = contains(["prod", "nonprod", "dev", "qa", "stg"], var.tags["env"])
-    error_message = "ERROR: The 'env' tag value must be one of the following: 'prod', 'nonprod','qa', 'stg' or 'dev'."
-  }
-}
+# variable "tags" {
+#   type        = map(string)
+#   description = "A map of tags to add to the resource"
+#   default = {
+#     "owner"     = "devops"
+#     "terraform" = "true"
+#     "env"       = "prod"
+#   }
+#   validation {
+#     condition     = contains(["prod", "nonprod", "dev", "qa", "stg"], var.tags["env"])
+#     error_message = "ERROR: The 'env' tag value must be one of the following: 'prod', 'nonprod','qa', 'stg' or 'dev'."
+#   }
+# }
 
