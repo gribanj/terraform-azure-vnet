@@ -16,7 +16,7 @@ variable "create" {
 variable "name" {
   description = "The name of the resource"
   type        = string
-  default     = "rg-xxxxx-prod"
+  default     = "vnet-xxxxx-prod"
 }
 
 variable "location" {

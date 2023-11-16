@@ -9,7 +9,7 @@ The module follows the principles of "create if not exist". The resource is only
 module "vnet" {
   source              = "gribanj/vnet/azure"
   create              = true
-  version = "v0.1.0"
+  version             = "v0.1.0"
   name                = "vnet-xxxxxx-prod"
   resource_group_name = "rg-xxxxxx-prod"
   location            = "westus3"

@@ -21,8 +21,9 @@ variable "extra_tags" {
   description = "Extra tags to add"
   type        = map(string)
   default     = {}
+
   validation {
-    condition     = contains(["prod", "nonprod", "dev", "qa", "stg"], var.tags["env"])
-    error_message = "ERROR: The 'env' tag value must be one of the following: 'prod', 'nonprod','qa', 'stg' or 'dev'."
+    condition     = can(var.extra_tags["env"]) ? contains(["prod", "nonprod", "dev", "qa", "stg"], var.extra_tags["env"]) : true
+    error_message = "The 'env' tag value must be one of the following: 'prod', 'nonprod', 'dev', 'qa', 'stg'.\n"
   }
 }
