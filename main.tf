@@ -16,7 +16,7 @@ resource "azurerm_virtual_network" "vnet" {
   )
 
   lifecycle {
-    ignore_changes        = [tags]
+    # ignore_changes        = [tags]
     create_before_destroy = true
   }
 }
